@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CA2201: Nie zgłaszaj wyjątków zastrzeżonych typów
+dotnet_diagnostic.CA2201.severity = suggestion
