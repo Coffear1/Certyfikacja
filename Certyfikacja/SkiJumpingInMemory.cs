@@ -1,15 +1,11 @@
-﻿
-
-using System.Diagnostics;
-
-namespace Certyfikacja
+﻿namespace Certyfikacja
 {
     public class SkiJumpingInMemory : SkiJumpingBase
     {
 
         public override event ScoreAddedDelegate ScoreAdded;
 
-        private List<float>scores = new List<float>();
+        private List<float> scores = new List<float>();
 
         public SkiJumpingInMemory(string name, string surname, string nationality)
             : base(name, surname, nationality)
@@ -17,18 +13,18 @@ namespace Certyfikacja
         }
         public override void AddScore(float score)
         {
-           if(score >= 0 && score <=260)
-           {
+            if (score >= 0 && score <= 260)
+            {
                 this.scores.Add(score);
-           }
-           else
-           {
-               throw new Exception("Takiego Skoku jeszcze nie widzieliśmy");
-           }
-           if   (score >= 190 && score <= 260 && ScoreAdded != null)
-           {
-               ScoreAdded(this, new EventArgs());
-           }
+            }
+            else
+            {
+                throw new Exception("Takiego Skoku jeszcze nie widzieliśmy");
+            }
+            if (score >= 190 && score <= 260 && ScoreAdded != null)
+            {
+                ScoreAdded(this, new EventArgs());
+            }
         }
 
         public override void AddScore(string score)
@@ -41,7 +37,7 @@ namespace Certyfikacja
             {
                 throw new Exception("String nie jest floatem");
             }
-            
+
         }
         public override void AddScore(double score)
         {

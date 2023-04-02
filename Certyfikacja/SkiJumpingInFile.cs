@@ -17,10 +17,10 @@ namespace Certyfikacja
         {
             if (score >= 0 && score <= 260)
             {
-               using (var writer = File.AppendText(fileName))
-               { 
-                    writer.WriteLine(score) ;
-               }
+                using (var writer = File.AppendText(fileName))
+                {
+                    writer.WriteLine(score);
+                }
             }
             else
             {
@@ -79,9 +79,7 @@ namespace Certyfikacja
                     var line = reader.ReadLine();
                     while (line != null)
                     {
-#pragma warning disable CA1305 // Określ interfejs IFormatProvider
                         var number = float.Parse(line);
-#pragma warning restore CA1305 // Określ interfejs IFormatProvider
                         grades.Add(number);
                         line = reader.ReadLine();
                     }

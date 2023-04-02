@@ -71,12 +71,7 @@ namespace SkiJumpingTest
             var skiJumper1 = new SkiJumpingInMemory("Adam", "Ma³ysz", "Polska");
             var skiJumper2 = skiJumper1;
 
-            Assert.True(skiJumper1  == skiJumper2); 
-
-
+            Assert.True(skiJumper1 == skiJumper2);
         }
-
-        
-
     }   
 } 

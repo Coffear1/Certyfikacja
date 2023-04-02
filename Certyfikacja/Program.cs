@@ -1,6 +1,5 @@
 ﻿
 using Certyfikacja;
-using System.ComponentModel.DataAnnotations;
 
 Console.WriteLine("Witamy w Klasyfikacji Skoków Narciarskich");
 Console.WriteLine("=========================================");
@@ -22,8 +21,6 @@ var nationality = skiJumper.Nationality;
 int counter1 = 0;
 while (true)
 {
-
-
     Console.WriteLine("Podaj imię, nazwisko oraz narodowość skoczka");
     Console.WriteLine();
     name = Console.ReadLine();
@@ -39,7 +36,6 @@ while (true)
         try
         {
             skiJumper.AddScore(input);
-
         }
         catch (Exception e)
         {
@@ -50,22 +46,22 @@ while (true)
         {
             break;
         }
-
     }
     counter1++;
-    if(counter1 == 2)
+    if (counter1 == 2)
     {
         break;
     }
 }
-    Console.WriteLine();
-    Console.WriteLine("=================================================================");
-    var statistics = skiJumper.GetStatistics();
-    Console.WriteLine("=====STATYSTYKI=====");
-    Console.WriteLine($"Najlepszy skok w konkursie lotów:{statistics.Max}m{skiJumper.Name + skiJumper.Surname}");
-    Console.WriteLine($"Najgorszy skok w konkursie lotów:{statistics.Min}m");
-    Console.WriteLine($"Średnia skoków w konkursie lotów:{statistics.Average:N2}m");
-    Console.WriteLine($"Średnia ocena skoku:{statistics.AverageLetter}");
+
+Console.WriteLine();
+Console.WriteLine("=================================================================");
+var statistics = skiJumper.GetStatistics();
+Console.WriteLine("=====STATYSTYKI=====");
+Console.WriteLine($"Najlepszy skok w konkursie lotów:{statistics.Max}m{skiJumper.Name + skiJumper.Surname}");
+Console.WriteLine($"Najgorszy skok w konkursie lotów:{statistics.Min}m");
+Console.WriteLine($"Średnia skoków w konkursie lotów:{statistics.Average:N2}m");
+Console.WriteLine($"Średnia ocena skoku:{statistics.AverageLetter}");
 
 
 

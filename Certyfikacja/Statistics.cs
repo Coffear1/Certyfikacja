@@ -12,8 +12,8 @@
             {
                 return this.Sum / this.Count;
             }
-
         }
+
         public char AverageLetter
         {
             get
@@ -41,6 +41,7 @@
             this.Max = float.MinValue;
             this.Min = float.MaxValue;
         }
+
         public void AddScore(float score)
         {
             this.Count++;
