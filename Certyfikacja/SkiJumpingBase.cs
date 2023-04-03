@@ -12,14 +12,41 @@ namespace Certyfikacja
             this.Surname = surname;
             this.Nationality = nationality;
         }
+
         public string Name { get; }
         public string Surname { get; }
         public string Nationality { get; }
         public abstract void AddScore(float score);
-        public abstract void AddScore(double score);
-        public abstract void AddScore(long score);
-        public abstract void AddScore(string score);
-        public abstract void AddScore(char score);
+
+        public void AddScore(double score)
+        {
+            float DoubleAsFloat = (float)score;
+            this.AddScore(DoubleAsFloat);
+        }
+
+        public void AddScore(long score)
+        {
+            float LongAsFloat = (float)score;
+            this.AddScore(LongAsFloat);
+        }
+
+        public void AddScore(string score)
+        {
+            if (float.TryParse(score, out float result))
+            {
+                this.AddScore((float)result);
+            }
+            else
+            {
+                throw new Exception("String nie jest floatem");
+            }
+        }
+
+        public void AddScore(char score)
+        {
+            float CharAsFloat = (float)score;
+            this.AddScore(CharAsFloat);
+        }
         public abstract Statistics GetStatistics();
     }
 }

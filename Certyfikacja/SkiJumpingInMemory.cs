@@ -27,36 +27,6 @@
             }
         }
 
-        public override void AddScore(string score)
-        {
-            if (float.TryParse(score, out float result))
-            {
-                this.AddScore((float)result);
-            }
-            else
-            {
-                throw new Exception("String nie jest floatem");
-            }
-
-        }
-        public override void AddScore(double score)
-        {
-            float DoubleAsFloat = (float)score;
-            this.AddScore(DoubleAsFloat);
-        }
-        public override void AddScore(long score)
-        {
-            float LongAsFloat = (float)score;
-            this.AddScore(LongAsFloat);
-        }
-
-
-        public override void AddScore(char score)
-        {
-            float CharAsFloat = (float)score;
-            this.AddScore(CharAsFloat);
-        }
-
         public override Statistics GetStatistics()
         {
             var statistics = new Statistics();
